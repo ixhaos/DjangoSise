@@ -1,8 +1,8 @@
 # DjangoSise
 基于Django开发Sise校园助手
-# 项目介绍
+# 开发初衷
 大三在校学生，为了熟悉开发Django和爬虫开发本站
-* Demo：http://sise.ixhaos.cn/About.html
+* Demo：https://sise.ixhaos.cn
 * 项目开源移步Github：https://github.com/ixhaos/DjangoSise
 # 技术支持 & 环境支持
 ## 前端：
