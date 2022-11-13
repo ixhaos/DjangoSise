@@ -1,0 +1,38 @@
+{% extends 'MasterPage.html' %}
+{% block title %}<title>平时成绩</title>{% endblock %}
+{% block heading %}<div class="panel-heading"><i class="fa fa-address-card-o" aria-hidden="true"></i> 平时成绩</div>{% endblock %}
+{% block content %}
+    <form method="post" class="form-inline" style="margin-bottom: 10px">
+    {% csrf_token %}
+            <select name="course" class="form-control">
+            {% for items in cls_info %}
+                <option value="{{ items.courseid }}-{{ items.schoolyear }}-{{ items.semester }}">{{ items.cls_name }}</option>
+            {% endfor %}
+            </select>
+            <input class="btn btn-default" type="submit" value="提交">
+    </form>
+
+        <h3>{{ cls_title }} <label style="float: right;margin-right: 80px;font-weight: normal">{{ cls_teacher }}</label></h3>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <td>平时成绩来源</td>
+                <td>占总评成绩百分比</td>
+                <td>最高分</td>
+                <td>成绩</td>
+            </tr>
+        </thead>
+    <tbody>
+        {% for items in cls_list %}
+            <tr>
+                <td>{{ items.cls_source }}</td>
+                <td>{{ items.cls_percent }}</td>
+                <td>{{ items.cls_highest }}</td>
+                <td>{{ items.cls_score }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+{% endblock %}

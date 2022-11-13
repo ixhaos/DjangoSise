@@ -1,0 +1,33 @@
+{% extends 'MasterPage.html' %}
+{% block title %}<title>全部课程</title>{% endblock %}
+{% block heading %}<div class="panel-heading"><i class="fa fa-address-card-o" aria-hidden="true"></i> 全部课程</div>{% endblock %}
+{% block content %}
+    <table class="table">
+        <thead>
+            <tr>
+                <td width="100px">开课学期</td>
+                <td width="100px">课程代码</td>
+                <td width="200px">课程名称</td>
+                <td width="50px">学分</td>
+                <td width="80px">考核方式</td>
+                <td width="50px">成绩</td>
+                <td width="80px">已得学分</td>
+                <td>先修课程</td>
+            </tr>
+        </thead>
+    <tbody>
+        {% for items in cls_list %}
+            <tr>
+                <td>{{ items.class_semester }}</td>
+                <td>{{ items.class_id }}</td>
+                <td>{{ items.class_name }}</td>
+                <td>{{ items.class_credit }}</td>
+                <td>{{ items.class_method }}</td>
+                <td>{{ items.class_score }}</td>
+                <td>{{ items.class_getCredit }}</td>
+                <td>{{ items.class_prerequisite }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+{% endblock %}

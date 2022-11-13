@@ -1,0 +1,39 @@
+{% extends 'MasterPage.html' %}
+{% block title %}<title>课表管理</title>{% endblock %}
+{% block heading %}<div class="panel-heading"><i class="fa fa-address-card-o" aria-hidden="true"></i> 课表管理</div>{% endblock %}
+{% block content %}
+    <form method="post" class="form-inline" style="margin-bottom: 10px">
+    {% csrf_token %}
+            <select name="schoolyear" class="form-control">{{ schoolyear_str|safe }}</select>
+            <select name="semester" class="form-control">{{ semester_str|safe }}</select>
+            <input class="btn btn-default" type="submit" value="提交">
+    </form>
+
+        <h3>{{ title }} <label style="float: right;margin-right: 80px;font-weight: normal">{{ week }}</label></h3>
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <td></td>
+                <td>星期一</td>
+                <td>星期二</td>
+                <td>星期三</td>
+                <td>星期四</td>
+                <td>星期五</td>
+            </tr>
+        </thead>
+    <tbody>
+        {% for items in cls_list %}
+            <tr>
+                <td>{{ items.td_head }}</td>
+                <td>{{ items.td_1 }}</td>
+                <td>{{ items.td_2 }}</td>
+                <td>{{ items.td_3 }}</td>
+                <td>{{ items.td_4 }}</td>
+                <td>{{ items.td_5 }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+{% endblock %}

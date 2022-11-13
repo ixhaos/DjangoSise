@@ -1,0 +1,26 @@
+{% extends 'MasterPage.html' %}
+{% block title %}<title>当前课程</title>{% endblock %}
+{% block heading %}<div class="panel-heading"><i class="fa fa-address-card-o" aria-hidden="true"></i> 当前课程</div>{% endblock %}
+{% block content %}
+    <div style="float: right"><a href="Class.html">查看所有课程</a> <a href="ElectiveClass.html">查看选修课程</a> <a href="ExamSchedule.html">查看考试时间安排</a></div>
+    <table class="table">
+        <thead>
+            <tr>
+                <td>课程代码</td>
+                <td>课程名称</td>
+                <td>学分</td>
+                <td>考核方式</td>
+            </tr>
+        </thead>
+    <tbody>
+        {% for items in current_class %}
+            <tr>
+                <td>{{ items.class_id }}</td>
+                <td>{{ items.class_name }}</td>
+                <td>{{ items.class_credit }}</td>
+                <td>{{ items.class_method }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+{% endblock %}

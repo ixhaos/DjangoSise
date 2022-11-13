@@ -1,0 +1,21 @@
+.login {
+    width: 400px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    border: 1px solid #f0f0f0;
+    padding: 10px 30px 30px 30px;
+    -webkit-box-shadow: 5px 10px 10px #ffffff;
+    box-shadow: 5px 10px 10px #ffffff;
+}
+.bs-callout {
+    padding: 10px 0 5px 10px;
+    margin: 5px 10px;
+    border: 1px solid #eee;
+    border-left-width: 5px;
+    border-radius: 3px;
+}
+
+.bs-callout-info {
+    border-left-color: #1b809e;
+}

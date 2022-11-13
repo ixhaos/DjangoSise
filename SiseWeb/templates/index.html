@@ -1,0 +1,55 @@
+{% extends 'MasterPage.html' %}
+{% load static %}
+{% block title %}<title>个人中心</title>{% endblock %}
+{% block heading %}<div class="panel-heading"><i class="fa fa-address-card-o" aria-hidden="true"></i> 个人中心</div>{% endblock %}
+{% block content %}
+    <div>
+        <div class="col-lg-5">
+            <div class="form-group">
+                <label class="control-label">学号：{{ stu_info.stu_id }}</label>
+            </div>
+            <div class="form-group">
+                <label class="control-label">姓名：{{ stu_info.name }}</label>
+            </div>
+            <div class="form-group">
+                <label class="control-label">年级：{{ stu_info.year }}</label>
+            </div>
+            <div class="form-group">
+                <label class="control-label">专业：{{ stu_info.major }}</label>
+            </div>
+            <div class="form-group">
+                <label class="control-label">电子邮箱：{{ stu_info.email }}</label>
+            </div>
+            <div class="form-group">
+                <label class="control-label">行政班：{{ stu_info.szb }}</label>
+            </div>
+            <div class="form-group">
+                <label class="control-label">班主任：{{ stu_info.headmaster }}</label>
+            </div>
+            <div class="form-group">
+                <label class="control-label">辅导员：{{ stu_info.instructor }}</label>
+            </div>
+        </div>
+        <div class="col-lg-5">
+            <div class="form-group">
+                <label class="control-label" style="color: red">累计已获得学分：{{ credit_info.a }}</label>
+            </div>
+            <div class="form-group">
+                <label class="control-label" style="color: red">累计在读课程学分：{{ credit_info.b }}</label>
+            </div>
+            <div class="form-group">
+                <label class="control-label" style="color: red">已选课程学分：{{ credit_info.c }}</label>
+            </div>
+            <div class="form-group">
+                <label class="control-label" style="color: red">预期获得学分：{{ credit_info.d }}</label>
+            </div>
+            <div class="form-group">
+                <label class="control-label" style="color: red">平均学分绩点：{{ credit_info.e }}</label>
+            </div>
+            <div class="form-group">
+                <label class="control-label">本专业本年级毕业需修满学分：{{ credit_info.f }}</label>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

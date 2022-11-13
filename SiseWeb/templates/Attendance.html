@@ -1,0 +1,31 @@
+{% extends 'MasterPage.html' %}
+{% block title %}<title>考勤管理</title>{% endblock %}
+{% block heading %}<div class="panel-heading"><i class="fa fa-address-card-o" aria-hidden="true"></i> 考勤管理</div>{% endblock %}
+{% block content %}
+    <form method="post" class="form-inline" style="margin-bottom: 10px">
+    {% csrf_token %}
+            <select name="yearSemester" class="form-control">{{ select|safe }}</select>
+            <input class="btn btn-default" type="submit" value="提交">
+    </form>
+    <div class="bs-callout bs-callout-info">
+        <label>{{ year }}</label><label style="float: right;margin-right: 220px">{{ TruancyTime }}</label>
+  </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <td width="200px">课程代码</td>
+                <td width="500px">课程名称</td>
+                <td>详细信息</td>
+            </tr>
+        </thead>
+    <tbody>
+        {% for items in truancy_list %}
+            <tr>
+                <td>{{ items.class_id }}</td>
+                <td>{{ items.class_name }}</td>
+                <td>{{ items.class_detail }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+{% endblock %}

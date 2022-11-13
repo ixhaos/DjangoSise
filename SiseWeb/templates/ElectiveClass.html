@@ -1,0 +1,33 @@
+{% extends 'MasterPage.html' %}
+{% block title %}<title>选修课程</title>{% endblock %}
+{% block heading %}<div class="panel-heading"><i class="fa fa-address-card-o" aria-hidden="true"></i> 选修课程</div>{% endblock %}
+{% block content %}
+    <table class="table">
+        <thead>
+            <tr>
+                <td>课程代码</td>
+                <td>课程名称</td>
+                <td>学分</td>
+                <td>考核方式</td>
+                <td>修读学年学期</td>
+                <td>成绩</td>
+                <td>已得学分</td>
+                <td>先修课程</td>
+            </tr>
+        </thead>
+    <tbody>
+        {% for items in elective_class %}
+            <tr>
+                <td>{{ items.class_id }}</td>
+                <td>{{ items.class_name }}</td>
+                <td>{{ items.class_credit }}</td>
+                <td>{{ items.class_method }}</td>
+                <td>{{ items.class_year }}</td>
+                <td>{{ items.class_score }}</td>
+                <td>{{ items.class_getCredit }}</td>
+                <td>{{ items.class_prerequisite }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+{% endblock %}

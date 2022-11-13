@@ -1,0 +1,34 @@
+{% extends 'MasterPage.html' %}
+{% block title %}<title>考试安排</title>{% endblock %}
+{% block heading %}<div class="panel-heading"><i class="fa fa-address-card-o" aria-hidden="true"></i> 考试安排</div>{% endblock %}
+{% block content %}
+
+
+
+
+
+    <table class="table">
+        <thead>
+            <tr>
+                <td>课程代码</td>
+                <td>课程名称</td>
+                <td>考试日期</td>
+                <td>考试时间</td>
+                <td>考场编码</td>
+                <td>考试座位</td>
+            </tr>
+        </thead>
+    <tbody>
+        {% for items in cls_list %}
+            <tr>
+                <td>{{ items.cls_id }}</td>
+                <td>{{ items.cls_name }}</td>
+                <td>{{ items.cls_date }}</td>
+                <td>{{ items.cls_time }}</td>
+                <td>{{ items.cls_examroom }}</td>
+                <td>{{ items.cls_seat }}</td>
+            </tr>
+        {% endfor %}
+    </tbody>
+    </table>
+{% endblock %}
